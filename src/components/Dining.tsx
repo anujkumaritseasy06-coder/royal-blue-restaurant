@@ -183,7 +183,7 @@ export default function Dining() {
             <div 
               key={index}
               onClick={() => openCategory(cat)}
-              className="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 bg-white/5 relative aspect-[4/3] flex flex-col justify-end shadow-lg hover:shadow-gold/20 transition-all duration-500"
+              className="group cursor-pointer rounded-2xl overflow-hidden border border-white/10 bg-white/5 relative aspect-[4/3] flex flex-col shadow-lg hover:shadow-gold/20 active:scale-[0.98] transition-all duration-300"
             >
               {/* Background Image */}
               <div 
@@ -195,12 +195,14 @@ export default function Dining() {
               <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               {/* Content */}
-              <div className="relative z-10 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <h3 className="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold transition-colors">{cat.category}</h3>
-                <p className="text-gray-300 text-sm line-clamp-2 opacity-80 group-hover:opacity-100 transition-opacity">{cat.description}</p>
-                <div className="mt-4 flex items-center gap-2 text-gold text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>View Dishes</span>
-                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              <div className="relative z-10 p-5 sm:p-6 flex flex-col h-full justify-end transform transition-transform duration-500">
+                <h3 className="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold transition-colors drop-shadow-md">{cat.category}</h3>
+                <p className="text-gray-200 text-sm line-clamp-2 mb-4 drop-shadow-md">{cat.description}</p>
+                
+                {/* Interactive Cue - Always Visible */}
+                <div className="mt-auto pt-3 flex items-center gap-2 text-gold text-[10px] sm:text-xs font-bold uppercase tracking-widest border-t border-white/20 group-hover:border-gold/50 transition-colors duration-300">
+                  <span className="group-active:scale-95 transition-transform">Explore Menu & Prices</span>
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </div>
               </div>
             </div>
