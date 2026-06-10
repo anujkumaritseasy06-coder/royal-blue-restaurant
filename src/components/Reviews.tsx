@@ -47,19 +47,19 @@ export default function Reviews() {
   return (
     <section id="reviews" className="py-24 bg-dark-bg relative overflow-hidden text-foreground">
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10">
-        <svg className="absolute top-10 left-10 w-64 h-64 text-gold transform -rotate-12" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-[0.03] hidden md:block pointer-events-none">
+        <svg className="absolute -top-10 left-10 w-96 h-96 text-gold transform -rotate-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-gold tracking-[0.2em] text-sm font-semibold uppercase mb-3 block">Community Trust</span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-royal-blue dark:text-white leading-tight">
-            Loved by <span className="text-gold">Hazaribagh</span>
+          <span className="text-gold tracking-[0.2em] md:tracking-[0.3em] text-xs font-bold uppercase mb-4 block opacity-90">Community Trust</span>
+          <h2 className="font-serif text-4xl md:text-6xl font-bold mb-6 text-white leading-tight drop-shadow-lg">
+            Loved by <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#FFDF73]">Hazaribagh</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
+          <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-10 font-light max-w-2xl mx-auto">
             Our greatest achievement isn't just our food; it's the smiles, memories, and thousands of returning guests who have made Royal Blue their second home for celebrations.
           </p>
           

@@ -10,12 +10,12 @@ export default function About() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-royal-blue/20 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3"></div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
           {/* Left: Dynamic Image Collage */}
-          <div className="lg:w-1/2 relative w-full h-[600px]">
+          <div className="lg:w-1/2 relative w-full h-[350px] sm:h-[450px] lg:h-[600px] mb-8 lg:mb-0">
             {/* Main Image */}
-            <div className="absolute top-0 right-10 w-[80%] h-[80%] rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] group">
+            <div className="absolute inset-0 lg:inset-auto lg:top-0 lg:right-10 lg:w-[80%] lg:h-[80%] rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] group">
               <Image 
                 src="/images/dining.jpeg"
                 alt="Luxury Dining Interior at Royal Blue Family Restaurant Hazaribagh"
@@ -26,8 +26,8 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#050A15]/80 to-transparent opacity-60"></div>
             </div>
 
-            {/* Overlapping Secondary Image */}
-            <div className="absolute bottom-0 left-0 w-[60%] h-[50%] rounded-2xl overflow-hidden border-[6px] border-[#050A15] shadow-2xl group z-10">
+            {/* Overlapping Secondary Image (Desktop Only) */}
+            <div className="absolute bottom-0 left-0 w-[60%] h-[50%] rounded-2xl overflow-hidden border-[6px] border-[#050A15] shadow-2xl group z-10 hidden lg:block">
               <Image 
                 src="/images/exterior.jpeg"
                 alt="Exterior of Royal Blue Banquet Hall and Restaurant in Hazaribagh"
@@ -38,15 +38,15 @@ export default function About() {
             </div>
 
             {/* Floating Experience Badge (Glassmorphism) */}
-            <div className="absolute top-1/2 left-0 -translate-x-6 -translate-y-1/2 z-20">
-              <div className="w-32 h-32 rounded-full glass border border-gold/30 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.2)] animate-float">
-                <span className="text-4xl font-serif text-gold font-bold leading-none mb-1">10+</span>
-                <span className="text-[10px] tracking-widest text-white uppercase text-center font-medium">Years of<br/>Legacy</span>
+            <div className="absolute -bottom-6 right-6 lg:top-1/2 lg:bottom-auto lg:right-auto lg:left-0 lg:-translate-x-6 lg:-translate-y-1/2 z-20">
+              <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-full glass border border-gold/30 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.4)] animate-float bg-[#050A15]/80 lg:bg-transparent backdrop-blur-xl lg:backdrop-blur-none">
+                <span className="text-2xl lg:text-4xl font-serif text-gold font-bold leading-none mb-0.5 lg:mb-1">10+</span>
+                <span className="text-[8px] lg:text-[10px] tracking-widest text-white uppercase text-center font-medium">Years of<br/>Legacy</span>
               </div>
             </div>
             
             {/* Decorative Dots Pattern */}
-            <div className="absolute -bottom-8 -right-8 w-32 h-32 grid grid-cols-4 grid-rows-4 gap-2 opacity-20">
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 grid-cols-4 grid-rows-4 gap-2 opacity-20 hidden lg:grid">
               {[...Array(16)].map((_, i) => (
                 <div key={i} className="w-1.5 h-1.5 rounded-full bg-gold"></div>
               ))}

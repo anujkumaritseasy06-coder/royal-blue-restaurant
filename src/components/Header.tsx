@@ -15,6 +15,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -78,45 +90,51 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Premium Full-Screen Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-dark absolute top-full left-0 right-0 border-t border-white/10 flex flex-col items-center py-6 gap-6">
-          <Link
-            href="#about"
-            className="text-white hover:text-gold transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            ABOUT
-          </Link>
-          <Link
-            href="#menu"
-            className="text-white hover:text-gold transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            DINING
-          </Link>
-          <Link
-            href="#banquets"
-            className="text-white hover:text-gold transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            BANQUETS
-          </Link>
-          <Link
-            href="#contact"
-            className="text-white hover:text-gold transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            CONTACT
-          </Link>
-          <a
-            href="https://wa.me/919471714840?text=Hello%20Royal%20Blue%20Family%20Restaurant%2C%20I%20would%20like%20to%20know%20more%20about%20table%20reservations%20and%20banquet%20bookings."
-            target="_blank"
-            rel="noreferrer"
-            className="px-6 py-2 border-2 border-gold text-gold hover:bg-gold hover:text-royal-blue transition-all font-semibold rounded-full"
-          >
-            BOOK NOW
-          </a>
+        <div className="md:hidden fixed inset-0 z-40 bg-[#050A15]/98 backdrop-blur-2xl flex flex-col items-center justify-center min-h-[100dvh] w-full">
+          <nav className="flex flex-col items-center gap-10">
+            <Link
+              href="#about"
+              className="text-white hover:text-gold transition-colors text-2xl font-serif tracking-[0.2em] uppercase opacity-0 animate-fade-in-up animation-delay-200"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="#menu"
+              className="text-white hover:text-gold transition-colors text-2xl font-serif tracking-[0.2em] uppercase opacity-0 animate-fade-in-up animation-delay-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Dining
+            </Link>
+            <Link
+              href="#banquets"
+              className="text-white hover:text-gold transition-colors text-2xl font-serif tracking-[0.2em] uppercase opacity-0 animate-fade-in-up animation-delay-400"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Banquets
+            </Link>
+            <Link
+              href="#contact"
+              className="text-white hover:text-gold transition-colors text-2xl font-serif tracking-[0.2em] uppercase opacity-0 animate-fade-in-up animation-delay-500"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            
+            <div className="mt-8 opacity-0 animate-fade-in-up animation-delay-600">
+              <a
+                href="https://wa.me/919471714840?text=Hello%20Royal%20Blue%20Family%20Restaurant%2C%20I%20would%20like%20to%20know%20more%20about%20table%20reservations%20and%20banquet%20bookings."
+                target="_blank"
+                rel="noreferrer"
+                className="px-10 py-4 border border-gold text-gold hover:bg-gold hover:text-[#050A15] transition-all font-semibold tracking-widest uppercase text-sm rounded-full shadow-[0_0_20px_rgba(212,175,55,0.2)] inline-block text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Book a Table
+              </a>
+            </div>
+          </nav>
         </div>
       )}
     </header>
