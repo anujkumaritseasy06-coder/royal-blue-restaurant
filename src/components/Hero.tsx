@@ -106,18 +106,15 @@ export default function Hero() {
               Reserve Table
             </a>
 
-            {/* Tertiary CTA - Minimalist */}
+            {/* Tertiary CTA - Directions */}
             <a
               href="https://www.google.com/maps/dir/?api=1&destination=Royal+blue+family+restaurant+and+banquets+hall"
               target="_blank"
               rel="noreferrer"
-              className="group flex-1 sm:flex-none px-2 sm:px-6 py-3.5 sm:py-4 text-gray-300 font-semibold tracking-wide hover:text-white transition-colors flex items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-sm whitespace-nowrap"
+              className="flex-1 sm:flex-none px-2 sm:px-8 py-3.5 sm:py-4 glass text-white font-bold tracking-[0.1em] sm:tracking-widest uppercase text-[10px] sm:text-sm hover:bg-white hover:text-[#050A15] transition-all duration-300 rounded-full flex items-center justify-center gap-1.5 sm:gap-3 border border-white/20 hover:border-white shadow-[0_8px_30px_rgba(0,0,0,0.2)] whitespace-nowrap"
             >
-              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-              <span className="relative">
-                Directions
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full"></span>
-              </span>
+              <svg className="w-3.5 h-3.5 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              Get Directions
             </a>
           </div>
         </div>

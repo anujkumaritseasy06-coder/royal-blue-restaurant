@@ -8,13 +8,18 @@ export default function FloatingContact() {
   // Show floating buttons after scrolling down a bit
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
+      const scrolled = window.scrollY || document.documentElement.scrollTop;
+      if (scrolled > 300) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
-    window.addEventListener("scroll", toggleVisibility);
+    
+    // Check initial scroll position
+    toggleVisibility();
+    
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
@@ -23,7 +28,7 @@ export default function FloatingContact() {
 
   return (
     <div 
-      className={`fixed bottom-6 right-6 z-[90] flex flex-col gap-4 transition-all duration-500 ${
+      className={`fixed bottom-6 right-6 z-[999] flex flex-col gap-4 transition-all duration-500 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
       }`}
     >
